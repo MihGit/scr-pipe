@@ -5,7 +5,7 @@ node{
         ])
     ])
 
-    withCredentials([sshUserPrivateKey(credentialsId: 'Jenkins', keyFileVariable: 'SSH_KEY', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
+    withCredentials([sshUserPrivateKey(credentialsId: 'JM', keyFileVariable: 'SSH_KEY', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
         stage('Install Prerequisites'){
             sh "ssh -o StrictHostKeyChecking=false -i $SSH_KEY root@${node_ip} yum install epel-release -y"
         }
