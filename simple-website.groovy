@@ -9,7 +9,7 @@ node{
         git url: 'https://github.com/MihGit/simple-site.git'
     }
 
-    withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-ssh-key', keyFileVariable: 'SSH_KEY', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
+    withCredentials([sshUserPrivateKey(credentialsId: 'Jenkins', keyFileVariable: 'SSH_KEY', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
         stage('Install Apache'){
             sh "ssh -o StrictHostKeyChecking=false -i $SSH_KEY root@${node_ip} yum install httpd -y"
         }
