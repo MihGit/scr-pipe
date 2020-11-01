@@ -6,7 +6,7 @@ node{
     ])
 
     stage("Git Clone"){
-        git url: 'https://github.com/MihGit/simple-site.git'
+        git url: 'https://github.com/MihGit/ss.git'
     }
 
     withCredentials([sshUserPrivateKey(credentialsId: 'JM', keyFileVariable: 'SSH_KEY', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
